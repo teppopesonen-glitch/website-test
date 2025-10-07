@@ -1,0 +1,140 @@
+/* Parallax Effect for Hero Section */
+.hero {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mountain Adventures - My Journey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>My Mountain Adventures</h1>
+        <p>Exploring the world, one summit at a time.</p>
+        <a href="#blog" class="cta-btn">View Latest Adventures</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Biography</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>Welcome to my personal site where I document my passion for mountain climbing, adventure travel, and exploration. Join me as I share stories from my hikes, photos from my climbs, and lessons learned from life above the clouds.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="bio">
+        <img src="images/profile.jpg" alt="Photo of me on a mountain">
+        <div>
+          <p>Hi, I’m a 37-year-old adventurer whose journey began in 2014 when I first tried indoor climbing. What started as a fun challenge quickly became a lifelong passion — one that grew alongside my love for travel. Over the years, my curiosity for new experiences evolved into a drive for bigger adventures, eventually leading me from climbing walls to real mountains around the world.</p>
+          <p>Each year, I strive to push my limits a little further — improving my skills, resilience, and connection with nature. My goal isn’t just to reach higher peaks, but to become a better version of myself through every climb and every journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2>Latest Adventures</h2>
+
+      <article class="blog-post">
+        <h3>Mount Kazbek – Georgia</h3>
+        <small>July 2025</small>
+        <p>A challenging but deeply rewarding expedition in the Caucasus Mountains. The landscape was raw and vast, and the teamwork it demanded made this climb stand out as one of my all-time favorites.</p>
+      </article>
+
+      <article class="blog-post">
+        <h3>Storsteinsfjellet – Norway</h3>
+        <small>July 2024</small>
+        <p>A scenic climb above the fjords near Tromsø. The combination of northern lights, snow-covered ridges, and Arctic silence made this one of my most peaceful adventures yet.</p>
+      </article>
+
+      <article class="blog-post">
+        <h3>Cotopaxi – Ecuador</h3>
+        <small>November 2022</small>
+        <p>An active volcano and one of Ecuador’s most iconic peaks. The climb combined technical ice sections and stunning views of the clouds below. It was both a mental and physical test I’ll never forget.</p>
+      </article>
+
+      <article class="blog-post">
+        <h3>Santa Cruz Hike – Peru</h3>
+        <small>October 2022</small>
+        <p>A four-day trek through the Cordillera Blanca with glacial lakes, Andean villages, and endless mountain views. This hike reminded me how powerful and peaceful the Peruvian wilderness can be.</p>
+      </article>
+
+      <article class="blog-post">
+        <h3>Huayna Potosi – Bolivia</h3>
+        <small>September 2022</small>
+        <p>At 6,088 meters, Huayna Potosi was my first true high-altitude challenge in the Andes. The sunrise from the summit was unforgettable — a breathtaking reward after a long night of climbing ice and snow under the stars.</p>
+      </article>
+    </section>
+
+    <!-- Add New Blog Post Form -->
+    <section id="new-post">
+      <h2>Add a New Adventure</h2>
+      <form id="postForm">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" placeholder="Enter adventure title" required><br><br>
+
+        <label for="date">Date</label><br>
+        <input type="text" id="date" name="date" placeholder="e.g. August 2025" required><br><br>
+
+        <label for="content">Content</label><br>
+        <textarea id="content" name="content" rows="4" placeholder="Write your adventure description..." required></textarea><br><br>
+
+        <button type="submit">Add Post</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Mountain Adventures. All rights reserved.</p>
+  </footer>
+<script>
+  function addBlogPost(title, date, content) {
+    const blogSection = document.getElementById("blog");
+
+    const article = document.createElement("article");
+    article.className = "blog-post";
+
+    article.innerHTML = `
+      <h3>${title}</h3>
+      <small>${date}</small>
+      <p>${content}</p>
+    `;
+
+    blogSection.insertBefore(article, blogSection.querySelector(".blog-post"));
+  }
+
+  document.getElementById("postForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById("title").value;
+    const date = document.getElementById("date").value;
+    const content = document.getElementById("content").value;
+
+    addBlogPost(title, date, content);
+
+    this.reset();
+  });
+</script>
+</body>
+</html>

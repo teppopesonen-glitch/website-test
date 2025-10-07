@@ -1,0 +1,192 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Typography and Colors */
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  line-height: 1.8;
+  background-color: #f8fafc;
+  color: #1e293b;
+  scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #1e3a8a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem;
+}
+.navbar ul li a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.navbar ul li a:hover {
+  color: #93c5fd;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 50, 0.45);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Section Structure */
+section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+/* Biography Section */
+.bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.bio img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.bio p {
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+/* Blog Section */
+.blog-post {
+  background: #ffffff;
+  padding: 20px 25px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.blog-post h3 {
+  color: #1e3a8a;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.blog-post small {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+.blog-post p {
+  margin-top: 10px;
+  color: #475569;
+}
+
+/* Add New Post Form */
+#new-post {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+#new-post h2 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+input:focus, textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 6px 14px rgba(30, 58, 138, 0.2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #1e3a8a;
+  color: #fff;
+  border-top: 4px solid #2563eb;
+  margin-top: 80px;
+}
